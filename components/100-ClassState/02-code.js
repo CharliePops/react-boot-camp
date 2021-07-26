@@ -36,9 +36,11 @@ const App = () => {
   }
   return (
     <div>
-      <pre>state: {instance.state}</pre>
-      <button onClick={decrement}>decrement</button>
-      <button onClick={increment}>increment</button>
+      <h1>Current count {instance.state}</h1>
+      <p>
+        <button onClick={decrement}>decrement</button>
+        <button onClick={increment}>increment</button>
+      </p>
     </div>
   )
 }

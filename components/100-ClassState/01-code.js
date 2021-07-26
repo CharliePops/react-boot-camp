@@ -21,19 +21,14 @@ class ClassWithState {
 
 const instance = new ClassWithState(10)
 
-const Reader = () => <pre>state: {instance.state}</pre>
-const Clicker = () => (
-  <>
-    <button onClick={instance.decrement}>decrement</button>
-    <button onClick={instance.increment}>increment</button>
-  </>
-)
-
-const App = () => (
-  <>
-    <Reader/>
-    <Clicker/>
-  </>
-)
-
-export default App
+const App = () => {
+  return (
+    <div>
+      <h1>Current count {instance.state}</h1>
+      <p>
+        <button onClick={instance.decrement}>decrement</button>
+        <button onClick={instance.increment}>increment</button>
+      </p>
+    </div>
+  )
+}

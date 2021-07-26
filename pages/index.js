@@ -10,9 +10,9 @@ import CounterState from "../components/03-State/01-component";
 import CounterEffect from "../components/04-Lifecycle/01-component";
 import CounterHook from "../components/05-Hooks/01-component";
 
-import ClassStateComponent01 from  '../components/08-ClassState/01-component'
-import ClassStateComponent02 from  '../components/08-ClassState/02-component'
-import ClassStateComponent03 from  '../components/08-ClassState/03-component'
+import ClassStateComponent01 from  '../components/100-ClassState/01-component'
+import ClassStateComponent02 from  '../components/100-ClassState/02-component'
+import ClassStateComponent03 from  '../components/100-ClassState/03-component'
 
 const topic = [
   "JSX",
@@ -88,19 +88,19 @@ export default function Home() {
       lang: "javascript",
     },
     
-    // 08-ClassState
+    // 100-ClassState
     {
-      code: require("!!raw-loader!../components/08-ClassState/01-code.js").default,
+      code: require("!!raw-loader!../components/100-ClassState/01-code.js").default,
       file: "Component.jsx",
       lang: "javascript",
     },
     {
-      code: require("!!raw-loader!../components/08-ClassState/02-code.js").default,
+      code: require("!!raw-loader!../components/100-ClassState/02-code.js").default,
       file: "Component.jsx",
       lang: "javascript",
     },
     {
-      code: require("!!raw-loader!../components/08-ClassState/03-code.js").default,
+      code: require("!!raw-loader!../components/100-ClassState/03-code.js").default,
       file: "Component.jsx",
       lang: "javascript",
     },
@@ -165,7 +165,7 @@ export default function Home() {
         </div>
       ),
     },
-    // 08-ClassState
+    // 100-ClassState
     {
       children: (
         <div className={styles.browser_container}>
