@@ -1,40 +1,38 @@
+// Team.jsx
+import { binding } from "riot-bindings";
 import { useState, useEffect, useRef } from "react";
 
-// Team.jsx
-const Component = () => {
+const Team = () => {
+  // hooks always go on top and cannot be inside conditionals or loops
   const [inputValue, setInputValue] = useState("");
   const [teamMembers, setTeamMembers] = useState([]);
   const inputRef = useRef(null);
+  // in class: this.prevTitle = ""
+  const prevTitle = useRef("");
 
   useEffect(() => {
     inputRef.current.focus();
   }, []);
 
   useEffect(() => {
-    setTeamMembers(["Carlos", "Dino", "Andre", "Gabriel", "Jim", "Bradfort"]);
-    return () => {
-      ///
-    };
-    // empty dependencies (only on mount/unmount)
+    //...
   }, []);
 
+  const addTeamMember = () => {
+    //...
+  };
+
   useEffect(() => {
+    prevTitle.current = document.title;
     document.title = `Total members: ${teamMembers.length}`;
     // effect dependencies!
   }, [teamMembers]);
 
-  const addTeamMember = () => {
-    if (inputValue && !teamMembers.includes(inputValue)) {
-      setTeamMembers([...teamMembers, inputValue]);
-    }
-    setInputValue("");
-  };
-
   return (
     <div>
       <h1>Riot Client Team</h1>
-      <p>Total members: {teamMembers.length}</p>
 
+      <p>Total members: {teamMembers.length}</p>
       <input
         type="text"
         value={inputValue}
@@ -42,9 +40,9 @@ const Component = () => {
         ref={inputRef}
       />
       <button onClick={addTeamMember}>Add Team Member</button>
-
       <ul>
         {teamMembers.map((name, i) => (
+          // must have a 'key'
           <li key={"member-" + i}>{name}</li>
         ))}
       </ul>
@@ -52,4 +50,7 @@ const Component = () => {
   );
 };
 
-export default Component;
+// App.jsx
+const App = () => {
+  return <Team />;
+};

@@ -11,6 +11,7 @@ const Team = () => {
     binding().addObserver("/riot-client/members", (members) =>
       setTeamMembers(members)
     );
+    // remove/clean up on unmount
     return () => {
       binding().removeObserver();
     };
@@ -20,6 +21,7 @@ const Team = () => {
     if (inputValue && !teamMembers.includes(inputValue)) {
       setTeamMembers([...teamMembers, inputValue]);
       setInputValue("");
+      // binding().post("/riot-client/members") ...
     }
   };
 
