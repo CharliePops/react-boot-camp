@@ -1,4 +1,5 @@
 import { useState } from "react"
+import useInterval from "use-interval"
 
 class ClassWithState {
   constructor(initial = 0) {
@@ -24,26 +25,24 @@ class ClassWithState {
 
 const instance = new ClassWithState(10)
 
-const App = () => {
-  const [_, setState] = useState(0);
-  const refresh = () => setState(x => x ? 0 : 1)
-  const decrement = () => {
-    instance.decrement()
-    refresh()
-  }
-  const increment = () => {
-    instance.increment()
-    refresh()
-  }
-  return (
-    <div>
-      <h1>Current count {instance.state}</h1>
-      <p>
-        <button onClick={decrement}>decrement</button>
-        <button onClick={increment}>increment</button>
-      </p>
-    </div>
-  )
+const Reader = () => {
+  const [_, setState] = useState(0)
+  useInterval(() => setState(x => x ? 0 : 1), 30)
+  return <h1>Current count {instance.state}</h1>
 }
+
+const Clicker = () => (
+  <p>
+    <button onClick={instance.decrement}>decrement</button>
+    <button onClick={instance.increment}>increment</button>
+  </p>
+)
+
+const App = () => (
+  <div>
+    <Reader/>
+    <Clicker/>
+  </div>
+)
 
 export default App

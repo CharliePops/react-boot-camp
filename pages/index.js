@@ -11,9 +11,12 @@ import Lifecycle1 from "../components/04-Lifecycle/01-component";
 import Lifecycle2 from "../components/04-Lifecycle/03-component";
 import CounterHook from "../components/05-Hooks/01-component";
 
-import ClassStateComponent01 from "../components/100-ClassState/01-component";
-import ClassStateComponent02 from "../components/100-ClassState/02-component";
-import ClassStateComponent03 from "../components/100-ClassState/03-component";
+import ClassStateComponent00 from  '../components/100-ClassState/00-component'
+import ClassStateComponent01 from  '../components/100-ClassState/01-component'
+import ClassStateComponent02 from  '../components/100-ClassState/02-component'
+import ClassStateComponent03 from  '../components/100-ClassState/03-component'
+import ClassStateComponent04 from  '../components/100-ClassState/04-component'
+import ClassStateComponent05 from  '../components/100-ClassState/05-component'
 
 const topic = [
   "JSX",
@@ -25,10 +28,13 @@ const topic = [
   "Lifecycle (Effects)",
   "Hooks React",
   "Hooks React",
-  "Hook React",
+  "Hooks React",
+  "Classes With State: the idea",
   "Classes With State: the problem",
   "Classes With State: the hacky solution",
   "Classes With State: why is not ideal",
+  "Classes With State: hacky interval solution",
+  "Classes With State: replace with context",
 ];
 
 export default function Home() {
@@ -112,6 +118,12 @@ export default function Home() {
 
     // 100-ClassState
     {
+      code: require("!!raw-loader!../components/100-ClassState/00-code.js")
+        .default,
+      file: "Component.jsx",
+      lang: "javascript",
+    },
+    {
       code: require("!!raw-loader!../components/100-ClassState/01-code.js")
         .default,
       file: "Component.jsx",
@@ -125,6 +137,18 @@ export default function Home() {
     },
     {
       code: require("!!raw-loader!../components/100-ClassState/03-code.js")
+        .default,
+      file: "Component.jsx",
+      lang: "javascript",
+    },
+    {
+      code: require("!!raw-loader!../components/100-ClassState/04-code.js")
+        .default,
+      file: "Component.jsx",
+      lang: "javascript",
+    },
+    {
+      code: require("!!raw-loader!../components/100-ClassState/05-code.js")
         .default,
       file: "Component.jsx",
       lang: "javascript",
@@ -222,6 +246,13 @@ export default function Home() {
     {
       children: (
         <div className={styles.browser_container}>
+          <ClassStateComponent00 />
+        </div>
+      ),
+    },
+    {
+      children: (
+        <div className={styles.browser_container}>
           <ClassStateComponent01 />
         </div>
       ),
@@ -237,6 +268,20 @@ export default function Home() {
       children: (
         <div className={styles.browser_container}>
           <ClassStateComponent03 />
+        </div>
+      ),
+    },
+    {
+      children: (
+        <div className={styles.browser_container}>
+          <ClassStateComponent04 />
+        </div>
+      ),
+    },
+    {
+      children: (
+        <div className={styles.browser_container}>
+          <ClassStateComponent05 />
         </div>
       ),
     },
