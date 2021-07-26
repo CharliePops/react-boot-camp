@@ -1,31 +1,43 @@
-// Counter.jsx
+// Team.jsx
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-const useCounter = (initialCount = 0) => {
-  const [count, setCount] = useState(initialCount);
+const Team = () => {
+  // hooks always go on top and cannot be inside conditionals or loops
+  const [inputValue, setInputValue] = useState("");
+  const [teamMembers, setTeamMembers] = useState([]);
 
-  // componentDidMount/componentDidUpdate:
   useEffect(() => {
-    document.title = `Current count: ${count}`;
-  });
+    setTeamMembers(["Carlos", "Dino", "Andre", "Gabriel", "Jim", "Bradfort"]);
+    return () => {
+      ///
+    };
+    // empty dependencies (only on mount/unmount)
+  }, []);
 
-  const increment = () => {
-    setCount(count + 1);
+  const addTeamMember = () => {
+    if (inputValue && !teamMembers.includes(inputValue)) {
+      setTeamMembers([...teamMembers, inputValue]);
+      setInputValue("");
+    }
   };
-
-  return { count, increment };
-};
-
-const Counter = () => {
-  const { count, increment } = useCounter(5);
 
   return (
     <div>
-      <h1>Current count {count}</h1>;
-      <p>
-        <button onClick={increment}>Increment</button>
-      </p>
+      <h1>Riot Client Team</h1>
+      <p>Total members: {teamMembers.length}</p>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e?.target?.value)}
+      />
+      <button onClick={addTeamMember}>Add Team Member</button>
+      <ul>
+        {teamMembers.map((name, i) => (
+          // must have a 'key'
+          <li key={"member-" + i}>{name}</li>
+        ))}
+      </ul>
     </div>
   );
 };
@@ -33,5 +45,5 @@ const Counter = () => {
 // App.jsx
 
 const App = () => {
-  return <Counter />;
+  return <Team />;
 };

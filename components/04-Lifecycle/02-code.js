@@ -3,12 +3,14 @@
 import { useState, useEffect } from "react";
 
 const Counter = () => {
+  // every time any state or props chage, this componet will re-render
   const [count, setCount] = useState(0);
 
-  // componentDidMount/componentDidUpdate:
+  // componentDidMount/componentDidUpdate
   // 4. runs effect
   useEffect(() => {
     document.title = `Current count: ${count}`;
+    // no dependencies, runs every render
   });
 
   const increment = () => {

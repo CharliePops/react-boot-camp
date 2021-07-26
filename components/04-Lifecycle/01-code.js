@@ -1,5 +1,4 @@
 // Counter.jsx
-
 import { useState, useEffect } from "react";
 
 const Counter = () => {
@@ -25,7 +24,6 @@ const Counter = () => {
 };
 
 // App.jsx
-
 const App = () => {
   return <Counter />;
 };

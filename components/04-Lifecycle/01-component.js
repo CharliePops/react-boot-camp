@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 const Component = () => {
   const [count, setCount] = useState(0);
 
-  // componentDidMount/componentDidUpdate:
   useEffect(() => {
     document.title = `Current count: ${count}`;
   });

@@ -2,10 +2,9 @@
 
 import { useState } from "react";
 
-const initialState = 0;
-
 const Counter = () => {
-  const [count, setCount] = useState(initialState);
+  // initialize with a value of 0
+  const [count, setCount] = useState(0);
 
   const increment = () => {
     setCount(count + 1);
