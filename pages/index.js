@@ -4,9 +4,9 @@ import { MiniBrowser } from "@code-hike/mini-browser";
 import { useSpring } from "use-spring";
 import useKeypress from "react-use-keypress";
 import styles from "../styles/Home.module.css";
-import Greet from "../components/01-JSX/01-component";
-import GreetProps from "../components/02-Props/01-component";
-import CounterState from "../components/03-State/01-component";
+import JSX from "../components/01-JSX/01-component";
+import Props from "../components/02-Props/01-component";
+import State from "../components/03-State/01-component";
 import Lifecycle1 from "../components/04-Lifecycle/01-component";
 import Lifecycle2 from "../components/04-Lifecycle/03-component";
 import CounterHook from "../components/05-Hooks/01-component";
@@ -24,8 +24,8 @@ const topic = [
   "Lifecycle (Effects)",
   "Lifecycle (Effects)",
   "Hooks React",
-  "Custom React",
-  "Rules of hooks",
+  "Hooks React",
+  "Hook React",
   "Classes With State: the problem",
   "Classes With State: the hacky solution",
   "Classes With State: why is not ideal",
@@ -139,7 +139,7 @@ export default function Home() {
     {
       children: (
         <div className={styles.browser_container}>
-          <Greet />
+          <JSX />
         </div>
       ),
     },
@@ -147,7 +147,7 @@ export default function Home() {
       children: (
         <div className={styles.browser_container}>
           <pre>{`
-            const Greeting = React.createElement(
+            const JSXing = React.createElement(
               "h1",
               { className: "greeting" },
               "Hello, Riot!"
@@ -160,7 +160,7 @@ export default function Home() {
     {
       children: (
         <div className={styles.browser_container}>
-          <GreetProps greet="Riot" />
+          <Props greet="Riot" />
         </div>
       ),
     },
@@ -168,7 +168,7 @@ export default function Home() {
     {
       children: (
         <div className={styles.browser_container}>
-          <CounterState />
+          <State />
         </div>
       ),
     },
