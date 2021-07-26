@@ -5,11 +5,11 @@ class ClassWithState {
     this.internalState = initial
   }
   increment = () => {
-    this.internalState++
+    this.state = this.internalState + 1
     return this.internalState
   }
   decrement = () => {
-    this.internalState--
+    this.state = this.internalState - 1
     return this.internalState
   }
   get state() {
@@ -17,6 +17,7 @@ class ClassWithState {
   }
   set state(value) {
     this.internalState = value
+    document.title = `Current count ${this.internalState}`
     return this.internalState
   }
 }
