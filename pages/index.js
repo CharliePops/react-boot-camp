@@ -10,7 +10,15 @@ import CounterState from "../components/03-State/01-component";
 import CounterEffect from "../components/04-Lifecycle/01-component";
 import CounterHook from "../components/05-Hooks/01-component";
 
-const topic = "Topic";
+const topic = [
+  "JSX",
+  "JSx is JavaScript",
+  "Component Properties",
+  "Component State",
+  "Lifecycle (Effects)",
+  "Lifecycle (Effects)",
+  "Hooks",
+];
 
 export default function Home() {
   const [stepIndex, setIndex] = React.useState(0);
@@ -148,7 +156,7 @@ export default function Home() {
 
   return (
     <div>
-      <h1 className={styles.title}>{topic}</h1>
+      <h1 className={styles.title}>{topic[stepIndex]}</h1>
       <div className={styles.container}>
         <MiniEditor
           steps={editorSteps}
